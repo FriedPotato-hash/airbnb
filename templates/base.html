@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>{%block page_title%}{%endblock page_title%}|Nbnb</title>
+    </head>
+    <body>
+    <header>
+        {% include "partials/navigation.html" %}
+        {% block search_bar %}
+            <form method='get' action ="{% url "rooms:search"%}">
+                <input value="{{city}}" name="city" placeholder="Search by City"/>
+            </form>
+        {% endblock search_bar %}
+    </header>
+        
+
+        {% block content %}
+        {% endblock %}
+        {% include "partials/footer.html" %}
+    </body>
+</html>
